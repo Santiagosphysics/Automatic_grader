@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-4">Estadísticas de Calificación</h1>
+    
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title">Resultados Generales</h5>
+            <p><strong>Media:</strong> {{ mean }}</p>
+            <p><strong>Mediana:</strong> {{ median }}</p>
+            <p><strong>Desviación Estándar:</strong> {{ std_dev }}</p>
+            <p><strong>Varianza:</strong> {{ variance }}</p>
+        </div>
+    </div>
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title">Histograma de Imágenes</h5>
+            <img src="{{ url_for('static', filename='uploads/hist_plot.png') }}" alt="Histograma" class="img-fluid">
+        </div>
+    </div>
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title">Box Plot</h5>
+            <img src="{{ url_for('static', filename='uploads/box_plot.png') }}" alt="Box Plot" class="img-fluid">
+        </div>
+    </div>
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title">Scatter Plot</h5>
+            <img src="{{ url_for('static', filename='uploads/scatter_plot.png') }}" alt="Scatter Plot" class="img-fluid">
+        </div>
+    </div>
+</div>
+{% endblock %}
